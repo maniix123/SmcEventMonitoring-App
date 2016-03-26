@@ -1,0 +1,29 @@
+@font-face{
+	font-family: 'Bariol Regular';
+	src: url('Fonts/Bariol_Regular.otf');
+}
+body, .ui-navbar>ul>li>a, .ui-body-c,.ui-panel-inner>ul>li>a, .ui-panel-inner, .ui-body-c input, .ui-body-c select, .ui-body-c textarea, .ui-body-c button, .ui-content, .ui-header{
+	text-shadow:0 0 0 !important;
+	font-family: 'Bariol Regular' !important;
+}
+.ui-title{
+	padding: 20px 20px !important;
+	font-family: 'Bariol Regular' !important;
+ 	text-shadow:0 0 0 !important;
+}
+.ui-content{
+	color: white;
+ 	text-shadow:0 0 0 !important;
+}
+input::-webkit-input-placeholder {
+	color: white;
+}
+input::-moz-placeholder {
+	color: white;
+}
+input:-moz-placeholder { 
+	color: white;
+}
+input:-ms-input-placeholder { 
+	color: white;
+}

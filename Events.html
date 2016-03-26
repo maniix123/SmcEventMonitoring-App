@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.css">
+	<link rel="stylesheet" href="themes/Maniix.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<script src="jquery/jquery.js"></script>
+	<script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script> 
+	<link rel = "stylesheet" href = "try.css">
+</head>
+<body>
+
+<div data-role="page" id="events" data-theme = "d">
+  <div data-role="panel" id="myPanel"> 
+	<h3>Menu</h3>
+	<ul data-role = "listview" data-inset = "true">
+		<li><a href = "HomePage.html" rel = "external">Home</a></li>
+		<li><a href = "Events.html" rel = "external">Events</a></li>
+		<li><a href = "Attended_Events.html" rel = "external">Attended Events</a></li>
+		<li><a href = "index.html" rel = "external">Logout</a></li>
+	</ul>
+  </div>
+  <div data-role="header" data-fullscreen="true">
+  <center>
+  	<h2 style = "white-space: normal; font-family: 'Bariol Regular'">SMC Event Monitoring</h2>
+  	<h3 style="white-space: normal; font-family: 'Bariol Regular'">Iligan City</h3>
+  </center>
+  </div>
+
+  <div data-role="main" class="ui-content">
+	<h2>List Of Events</h2>
+	<form class="ui-filterable">
+		<input id="myFilter" data-type="search" placeholder = "Search Events">
+	</form>
+	<ul data-role="listview" data-filter="true" data-input="#myFilter" id ="events" data-inset = "true">
+	</ul>
+  </div>
+
+  <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+            <ul>
+                <li><a href="#myPanel" data-icon="grid" data-role="button" data-corners="false">Menu</a></li>
+                <li><a href="Events.html" data-icon="info" data-role="button" data-corners="false" rel = "external">Events</a></li>
+                <li><a href="#" data-icon="check" data-role="button" data-corners="false" onclick = "logout()">Logout</a></li>
+            </ul>
+        </div>
+  </div>
+</div> 
+  <script src = "js/Handler.js"></script>
+  <script>
+    function logout() {
+		var r = confirm("Are you sure to logout?");
+		if (r == true)
+		{
+			var db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
+			db.transaction(function (tx){
+			tx.executeSql('DELETE FROM User;');			
+			},logouterror);
+			
+			location.href = "index.html";
+		} 
+		else 
+		{
+			
+		}
+    }
+	function logouterror(err) {
+        alert('There is an error in the first function: ' +err.message+ '\nSecond message'+err);
+    }		
+</script>
+</body>
+</html>

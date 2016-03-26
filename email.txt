@@ -1,0 +1,4 @@
+email: madtaz200@yahoo.com
+pass: 316874900Man
+plugins: cordova-plugin-network-information
+	 cordova-plugin-geolocation
