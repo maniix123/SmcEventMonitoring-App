@@ -1,2 +1,2 @@
 ## My first repository (I think, I can't remember)
-### Our cordova app for our thesis project
+### My cordova application for our Mobile Applications subject in college.
